@@ -6,15 +6,27 @@ body {
     width: 100%;
     height: 100%;
 }
-.wrapper{
+
+.wrapper,
+#home,
+#home-warpper {
     height: 100%;
 }
 
-#home{
-    height: 100%;
+#go-up{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  box-shadow: 0px 4px 13px 5px rgba(0,0,0,0.75);
+  border-radius: 50%;
+  border:none;
+  color: #E91E63;
+  cursor: pointer;
 }
-#home-wrapper{
-    height: 100%;
+#go-up i{
+    font-size:30px;
 }
 
 .header-wrapper {
@@ -34,21 +46,30 @@ body {
     margin: 16px 0;
     font-weight: bolder;
     display: inline-block;
-    font-family:'Oleo Script', Helvetica, sans-serif;
+    font-family: 'Oleo Script', Helvetica, sans-serif;
     color: #2b2b2b;
-    text-shadow: 4px 4px 0px rgba(0,0,0,0.1);
+    text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
+
+
 
 .header-navigation ul {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
+
+
+.header-navigation ul a{
+     text-decoration: none;
+     color: inherit;
+}
+
 
 .header-navigation ul li {
     list-style-type: none;
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 20px;    
 }
 
 #home-wrapper {
@@ -63,8 +84,8 @@ body {
     margin-bottom: 5px;
 }
 
-.self-bio{
-    font-size:28px;
+.self-bio {
+    font-size: 28px;
     font-weight: bolder;
     color: #263238;
 }
@@ -83,15 +104,17 @@ body {
     border-radius: 3px;
     min-width: 300px;
     animation: bgColor infinite 10s;
-    
+
 }
-.project-button{
-    background:#2E38FF;
+
+#project-button {
+    background: #2E38FF;
     display: inline-block;
     color: white;
     padding: 15px;
     border-radius: 5px;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #skill-wrapper {
@@ -100,69 +123,188 @@ body {
     animation: rotate-hor-top 1.8s infinite both;
 }
 
-.skill span::before{
-    content: 'Full stack developer';   
-    animation :changeText infinite 9s; 
+.skill span::before {
+    content: 'Full stack developer';
+    animation: changeText infinite 9s;
 }
 
-#projects{
+
+
+#projects {
     height: 100%;
-    padding: 10px;
+    margin-top: 10px;
 }
 
 #projects .project {
     width: 25%;
 }
-#projects .project img{
+
+#projects .project img {
     width: 100%;
 }
 
-.project{
-    box-shadow: -2px 0px 19px -8px rgba(0,0,0,0.75);
+.project {
+    box-shadow: -2px 0px 19px -8px rgba(0, 0, 0, 0.75);
+}
+
+.glide__arrow i {
+    font-size: 40px;
+    transition: all 0.2s ease-in-out 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0s;
+}
+
+.glide__arrow {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.glide__arrow i:hover {
+
+    color: #ed145b;
+}
+
+.glide__bullet {
+    background: #00897B !important;
+
 }
 
 
+.glide__bullet--active {
+    background: #455A64 !important;
+    transform: scale(1.3) !important;
+}
 
 
-@keyframes changeText{
-    0%{
-        content: 'Full stack developer';        
+.mode-logo {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #212121;
+    transition: all .25s ease;
+    padding: 8px;
+    margin: 0 8px;
+}
+
+.mode-logo:hover {
+    padding: 5%;
+    margin-top: -20px;
+    margin-left: -20px;
+    cursor: pointer;
+}
+
+
+.mode-logo:hover:before {
+    width: 90px;
+    height: 90px;
+    margin-top: -2px;
+    margin-left: -2px;
+}
+
+#mode-changer {
+    color: #FF4081;
+}
+
+#project-header {
+    width: 70%;
+    margin: 0px auto;
+}
+
+.glide {
+    margin-top: 15px !important;
+}
+
+#contact{
+    height: 100%;
+}
+.contact-form{
+    text-align: center;
+    width:50%;
+    margin: 0 auto;
+    /* background:#009688; */
+    color:black;
+    padding: 15px;
+    box-shadow: 4px 9px 38px 0px rgba(0,0,0,0.75);
+}
+
+.contact-form input{
+    display: inline-block;
+    margin: 10px;
+    width:60%;
+    padding: 15px;
+    border:none;
+    transition: all .25s ease;
+    border-bottom: 1px solid  grey;
+}
+
+.contact-form input:focus{
+    outline: none;
+}
+
+#send-message{
+    width:30%;
+    border:2px solid #F44336;
+    margin:15px auto;
+    padding: 15px;
+    background: linear-gradient(to right, #F44336 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .65s ease;
+    cursor: pointer;
+}
+#send-message:hover{
+    background-position: left bottom;
+    color: white;
+}
+
+@keyframes changeText {
+    0% {
+        content: 'Full stack developer';
     }
-    20%{
+
+    20% {
         content: "C# developer"
     }
-    40%{
+
+    40% {
         content: "Oracle SQL developer"
     }
-    60%{
+
+    60% {
         content: "NoSQL developer"
     }
-    80%{
+
+    80% {
         content: "JavaScript developer"
     }
-    95%{
-        content: 'ASP.NET developer'; 
+
+    95% {
+        content: 'ASP.NET developer';
     }
 }
 
-@keyframes bgColor{
-    0%{
-        background-color: #FF5722;  
+@keyframes bgColor {
+    0% {
+        background-color: #FF5722;
     }
-    20%{
-        background-color: #F57F17;  
+
+    20% {
+        background-color: #F57F17;
     }
-    40%{
-        background-color: #43A047;  
+
+    40% {
+        background-color: #43A047;
     }
-    60%{
-        background-color: #1A237E;  
+
+    60% {
+        background-color: #1A237E;
     }
-    80%{
-        background-color: #546E7A;  
+
+    80% {
+        background-color: #DD2C00;
     }
-    100%{
-        background-color: #00695C; 
+
+    100% {
+        background-color: #00695C;
     }
 }
 
@@ -171,9 +313,11 @@ body {
     0% {
         transform: rotateX(0);
         transform-origin: top;
-      }
-      100% {
+    }
+
+    100% {
         transform: rotateX(-360deg);
         transform-origin: top;
-      }
-  }
+    }
+}
+
