@@ -19,13 +19,12 @@ var glide = document.querySelector('.glide');
 
 var glideInit = new Glide(glide,{
     type: 'carousel',
-    gap:'200px',
+    gap:'10px',
     animationTimingFunc:'ease-in-out',
     bound:true,
     startAt: 0,
     perView: 4,
-    autoplay:3000,
-    animationDuration:1200,
+    animationDuration:500,
       });
 glideInit.mount();
 
