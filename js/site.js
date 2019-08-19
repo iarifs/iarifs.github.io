@@ -25,6 +25,7 @@ var glideInit = new Glide(glide,{
     startAt: 0,
     perView: 4,
     animationDuration:500,
+    autoplay:2000,
       });
 glideInit.mount();
 
@@ -54,9 +55,11 @@ upButton.addEventListener("click",()=>{
 function scrollFunction() {
     if (document.body.scrollTop > 20
          || document.documentElement.scrollTop > 20) {
-     upButton.style.display = "block";
+     upButton.style.visibility = "visible";
+     upButton.style.opacity = "1";
     } else {
-      upButton.style.display = "none";
+      upButton.style.opacity = "0";
+      upButton.style.visibility = "hidden";
     }
   }
 
