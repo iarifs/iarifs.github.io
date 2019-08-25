@@ -235,7 +235,7 @@ body {
     margin: 0 auto;
     transition: all 1s, filter 3s ease-in-out;
 }
-.image-info{
+/* .image-info{
     position: absolute;
     bottom: 0;
     right: 0;
@@ -245,7 +245,7 @@ body {
     height: 95%;
     transition: .5s ease;
     margin: 0 auto;
-}
+} */
 
 .left{
     left:100%;
