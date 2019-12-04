@@ -26,14 +26,6 @@ $(document).ready(function(){
         enabled:true
         }
     });
-
-    $('.play-btn').magnificPopup({
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
  
 
     // Select all links with hashes
@@ -113,26 +105,6 @@ $(document).ready(function(){
     $('.filters ul li').removeClass('active');
     $(this).addClass('active');
     
-    var data = $(this).attr('data-filter');
-    $grid.isotope({
-      filter: data
-    })
-  });
-
-
-  if(document.getElementById("portfolio")){
-        var $grid = $(".grid").isotope({
-          itemSelector: ".all",
-          percentPosition: true,
-          masonry: {
-            columnWidth: ".all"
-          }
-        })
-  };
-
-
-
-
-
+  })
 
  });
